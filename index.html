@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refúgio da Serra - Pousada, Chalés e Hotel Fazenda</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- HEADER FIXO COM MENU ANIMADO -->
+    <header class="topo" id="header-principal">
+        <div class="container header-conteudo">
+            <div class="logo">
+                <span class="icone-logo">🏔️</span>
+                <div>
+                    <h1>Refúgio da Serra</h1>
+                    <p>Pousada &bull; Chalés &bull; Hotel Fazenda</p>
+                </div>
+            </div>
+
+            <nav class="menu" id="menu-navegacao">
+                <a href="#inicio" class="link-menu ativo">Início</a>
+                <a href="#acomodacoes" class="link-menu">Acomodações</a>
+                <a href="#experiencias" class="link-menu">Experiências</a>
+                <a href="#sobre" class="link-menu">Sobre</a>
+                <a href="#video" class="link-menu">Vídeo</a>
+                <a href="#contato" class="link-menu">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SEÇÃO INÍCIO: CARROSSEL ANIMADO -->
+    <section id="inicio" class="carrossel">
+        <div class="slide ativo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEFEB06eUUXMObjCnBLLJpCKa-luj3Bc1OA4QjQj1XPg&s=10"
+                alt="Chalé rústico nas montanhas ao entardecer">
+            <div class="banner-texto">
+                <h2>Natureza, Conforto e <span>Tranquilidade</span></h2>
+                <p>A hospedagem ideal para você descansar e viver momentos inesquecíveis na serra.</p>
+                <a href="#acomodacoes" class="btn-verde">Conheça as Acomodações &gt;</a>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfYz6541FcPM7JvqhHZHSkxNF3q3hCIlIiq5no5U1blA&s=10"
+                alt="Vista panorâmica das montanhas e natureza">
+            <div class="banner-texto">
+                <h2>Ar Puro e <span>Paisagens Únicas</span></h2>
+                <p>Desconecte-se da rotina urbana em meio a trilhas, cachoeiras e muito verde.</p>
+                <a href="#experiencias" class="btn-verde">Explorar Experiências &gt;</a>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1542718610-a1d656d1884c?auto=format&fit=crop&w=1600&q=80"
+                alt="Cabana aconchegante cercada por pinheiros">
+            <div class="banner-texto">
+                <h2>Sabor Colonial e <span>Aconchego</span></h2>
+                <p>Café da manhã artesanal preparado com ingredientes frescos da região.</p>
+                <a href="#sobre" class="btn-verde">Nossa História &gt;</a>
+            </div>
+        </div>
+
+        <!-- Botões de Controle -->
+        <button type="button" class="controle prev" id="btn-voltar" aria-label="Slide anterior">&#10094;</button>
+        <button type="button" class="controle next" id="btn-avancar" aria-label="Próximo slide">&#10095;</button>
+
+        <!-- Indicadores (Bolinhas) -->
+        <div class="indicadores">
+            <span class="ponto ativo" data-index="0"></span>
+            <span class="ponto" data-index="1"></span>
+            <span class="ponto" data-index="2"></span>
+        </div>
+    </section>
+
+    <!-- 3 CARDS INFORMATIVOS (DIFERENCIAIS) -->
+    <section class="diferenciais">
+        <div class="container grid-3">
+            <div class="card-info">
+                <span class="icone-info">🌿</span>
+                <div>
+                    <h3>Contato com a Natureza</h3>
+                    <p>Ar puro, reservas ecológicas e muito verde ao redor.</p>
+                </div>
+            </div>
+            <div class="card-info">
+                <span class="icone-info">☕</span>
+                <div>
+                    <h3>Café da Manhã Colonial</h3>
+                    <p>Receitas caseiras e produtos frescos da região.</p>
+                </div>
+            </div>
+            <div class="card-info">
+                <span class="icone-info">🥾</span>
+                <div>
+                    <h3>Lazer e Ecoturismo</h3>
+                    <p>Trilhas guiadas, cachoeiras e passeios a cavalo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORIA 1: NOSSAS ACOMODAÇÕES (4 CARDS + INTERAÇÃO PROMOÇÃO JS) -->
+    <section id="acomodacoes" class="secao-padrao">
+        <div class="container">
+            <div class="titulo-secao">
+                <h2>Nossas Acomodações</h2>
+                <p>Escolha o espaço perfeito para o seu descanso</p>
+                <div class="linha-verde"></div>
+            </div>
+
+            <!-- Interação JavaScript: Botão Ver Promoção -->
+            <div class="caixa-promocao">
+                <button type="button" id="btn-promocao" class="btn-verde">Ver promoção</button>
+                <div id="mensagem-promocao" class="msg-oculta">
+                    🎉 <strong>Promoção de Temporada:</strong> Reserve 3 diárias nos Chalés ou Suítes e ganhe um passeio
+                    a cavalo + jantar colonial cortesia!
+                </div>
+            </div>
+
+            <!-- Grid de 4 Cards Animados -->
+            <div class="grid-4">
+                <article class="card-animado">
+                    <div class="card-img-box">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2sFdnEuvtgffu-vmIegHvgXE5ExcKdKdUqsahooTl3Q&s=10"
+                            alt="Chalé da Montanha">
+                    </div>
+                    <div class="card-corpo">
+                        <h3>Chalé da Montanha</h3>
+                        <p>Varanda privativa com rede, lareira e vista privilegiada do vale.</p>
+                        <span class="preco">A partir de <strong>R$ 380,00</strong>/noite</span>
+                    </div>
+                </article>
+
+                <article class="card-animado">
+                    <div class="card-img-box">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuc-P38cegsUtHfm_VTZNFiHU5L16tfaAyFfi1pJX8eQ&s"
+                            alt="Suíte Standard">
+                    </div>
+                    <div class="card-corpo">
+                        <h3>Suíte Standard</h3>
+                        <p>Ambiente acolhedor ideal para casais que buscam sossego e conforto.</p>
+                        <span class="preco">A partir de <strong>R$ 290,00</strong>/noite</span>
+                    </div>
+                </article>
+
+                <article class="card-animado">
+                    <div class="card-img-box">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNsBz7LGr1geLvJg8bv9r6dqDfEUKUqf0bvtJ-hEVenA&s=10"
+                            alt="Quarto Família">
+                    </div>
+                    <div class="card-corpo">
+                        <h3>Quarto Família</h3>
+                        <p>Amplo espaço com dois ambientes e comodidade para até 5 pessoas.</p>
+                        <span class="preco">A partir de <strong>R$ 450,00</strong>/noite</span>
+                    </div>
+                </article>
+
+                <article class="card-animado">
+                    <div class="card-img-box">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRqn8pVMNbDhFFFX3DPoEv0A8UzvfYs2ok49HMXV-qtg&s=10"
+                            alt="Cabana Master">
+                    </div>
+                    <div class="card-corpo">
+                        <h3>Cabana Master</h3>
+                        <p>Banheira de hidromassagem panorâmica e deck exclusivo na mata.</p>
+                        <span class="preco">A partir de <strong>R$ 540,00</strong>/noite</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORIA 2: EXPERIÊNCIAS E LAZER -->
+    <section id="experiencias" class="secao-alternada">
+        <div class="container">
+            <div class="titulo-secao">
+                <h2>Experiências e Lazer</h2>
+                <p>Atividades exclusivas em harmonia com a serra</p>
+                <div class="linha-verde"></div>
+            </div>
+
+            <div class="grid-3">
+                <article class="card-animado">
+                    <div class="card-img-box">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3wD1j-oNU1gYTBDrL2O1NwnHsyeQGz6AMkozkRcdtVA&s=10"
+                            alt="Café da Manhã Colonial">
+                    </div>
+                    <div class="card-corpo">
+                        <h3>Café da Manhã Colonial</h3>
+                        <p>Pães de queijo assados na hora, bolos caseiros, frutas da estação e café moído na fazenda.
+                        </p>
+                        <span class="tag-incluso">Incluso na diária</span>
+                    </div>
+                </article>
+
+                <article class="card-animado">
+                    <div class="card-img-box">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD-lb3tVJIffjKQTSBKqZGCNDVwsy_TfoJKXujb0NzPw&s=10"
+                            alt="Trilhas e Cachoeiras">
+                    </div>
+                    <div class="card-corpo">
+                        <h3>Trilhas e Cachoeiras</h3>
+                        <p>Percursos ecológicos sinalizados que levam a quedas d'água cristalinas dentro da propriedade.
+                        </p>
+                        <span class="tag-incluso">Acesso livre</span>
+                    </div>
+                </article>
+
+                <article class="card-animado">
+                    <div class="card-img-box">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRj2mL8XJL96bjC8rrhEGWRk0g3fY02z5I-a5I3F2OFEg&s=10"
+                            alt="Passeio a Cavalo">
+                    </div>
+                    <div class="card-corpo">
+                        <h3>Passeio a Cavalo</h3>
+                        <p>Cavalgadas tranquilas pelos campos e mirantes da serra acompanhadas por guias locais.</p>
+                        <span class="tag-incluso">Agendamento na recepção</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO SOBRE E VÍDEO INCORPORADO -->
+    <section id="sobre" class="secao-padrao">
+        <div class="container grid-2">
+            <!-- História da Pousada -->
+            <div class="bloco-sobre">
+                <div class="titulo-secao">
+                    <h2>Sobre o Refúgio da Serra</h2>
+                    <div class="linha-verde"></div>
+                </div>
+                <img src="https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?auto=format&fit=crop&w=900&q=80"
+                    alt="Vista externa da pousada na serra" class="img-sobre">
+                <p>
+                    Localizado no alto das montanhas, o <strong>Refúgio da Serra</strong> nasceu do sonho de preservar
+                    uma antiga propriedade rural e transformá-la em um santuário de descanso. Combinamos arquitetura
+                    rústica em madeira e pedra com hospitalidade acolhedora para proporcionar dias de paz longe da
+                    agitação das grandes cidades.
+                </p>
+            </div>
+
+            <!-- Vídeo de Turismo / Natureza -->
+            <div id="video" class="bloco-video">
+                <div class="titulo-secao">
+                    <h2>Conheça Nossa Região</h2>
+                    <div class="linha-verde"></div>
+                </div>
+                <div class="video-responsivo">
+                    <iframe src="https://www.youtube.com/embed/BHACKCNDMW8"
+                        title="Natureza e paisagens de montanha - Refúgio da Serra" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <p class="legenda-video">Explore a beleza das montanhas, trilhas e o clima acolhedor que esperam por
+                    você.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE CONTATO -->
+    <section id="contato" class="secao-alternada">
+        <div class="container">
+            <div class="titulo-secao">
+                <h2>Contato e Localização</h2>
+                <div class="linha-verde"></div>
+            </div>
+            <div class="contato-card">
+                <p><strong>📍 Cidade:</strong> Monte Verde / Serra da Mantiqueira - MG (Estrada da Serra, Km 12)</p>
+                <p><strong>🕒 Atendimento:</strong> Recepção 24 horas &bull; Check-in a partir das 14h00</p>
+                <p><strong>✉️ Reservas e Dúvidas:</strong> <a href="mailto:reservas@refugiodaserra.com.br"
+                        class="link-contato">reservas@refugiodaserra.com.br</a> | (35) 99888-7766</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER COMPLETO -->
+    <footer class="rodape">
+        <div class="container footer-conteudo">
+            <div class="logo">
+                <span class="icone-logo">🏔️</span>
+                <div>
+                    <strong>Refúgio da Serra</strong>
+                    <p>Pousada &bull; Chalés &bull; Hotel Fazenda</p>
+                </div>
+            </div>
+
+            <nav class="footer-links">
+                <a href="#inicio">Início</a>
+                <a href="#acomodacoes">Acomodações</a>
+                <a href="#experiencias">Experiências</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#video">Vídeo</a>
+                <a href="#contato">Contato</a>
+            </nav>
+
+            <div class="redes-sociais">
+                <a href="#contato" aria-label="Instagram">📷 Instagram</a>
+                <a href="#video" aria-label="YouTube">▶️ YouTube</a>
+                <a href="#contato" aria-label="Facebook">📘 Facebook</a>
+            </div>
+
+            <p class="copyright">&copy; 2026 Refúgio da Serra. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
